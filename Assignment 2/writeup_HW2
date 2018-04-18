@@ -1,0 +1,37 @@
+Assignment 2, Cristina Mac Gregor
+
+
+For this assignment, I worked on a Jupyter notebook, and organized it in the following way:
+It includes first, all functions created in order to carry out the analysis are defined in the folowing order:
+Part 1.A.:
+
+    1. Read Data functions:
+
+    -read_files reads a csv and makes a pandas dataframe that corresponds to it.
+
+    2. Exploring and pre-prcocessing data functions:
+
+    -check_mv checks missing values and prints out the percentages of missing values for a specified variable.
+    -clean_var: winsorizes outliers and fills in missing values with the media of specified frame.
+    -get_stats:  Prints general statistics for each variable, and if specified, also means of grouped-by varibales, grouped by specified groups.
+    -get_geo and print_map_byvar: allows to merge with a shapefile in order to print density maps for given variables. (this is not done for this assignment)
+    -show_cor: prints spearman correlation matrix between the variables that compose a frame.
+    -scat: prints scatter plots between a list of variables and a dependent variable.
+
+    3. Generate features functions:
+
+    -discretize_equal discretizes a variable on a frame given a number of buckets.
+    -discretize_quartiles: discretizes according to the data distribution
+    (These variables are not useful in the case of the analysis conducted for this assignment since KNN does not require discretized variables, but we try to include discretized age in our features)
+    -make_dummies: turns a discrete function into dummy variables.
+
+    4. Build and evaluate classifier
+
+
+    -drop_feats: Deletes variables that we don't want to include as predicitve feature
+    -split: Splits data into train and test sections.
+    - knn_f: Fits model and applies to testing data according to the specificities provided for the adjustment of the model.
+    - test_evals: Returns an evaluation measure according to the test
+    predictions and true values, according to a given threshold
+    and according to the specified measure of evaluation.
+    -  test_models:   Tests all possible specifications for a knn model given a set of parameters specified. 
