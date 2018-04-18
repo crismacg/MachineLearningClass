@@ -20,18 +20,27 @@ Part 1.A.:
 
     3. Generate features functions:
 
-    -discretize_equal discretizes a variable on a frame given a number of buckets.
     -discretize_quartiles: discretizes according to the data distribution
-    (These variables are not useful in the case of the analysis conducted for this assignment since KNN does not require discretized variables, but we try to include discretized age in our features)
+    (This variables is not used in the case of the analysis conducted for this assignment since KNN does not require discretized variables)
     -make_dummies: turns a discrete function into dummy variables.
+
+Part 1.B:
 
     4. Build and evaluate classifier
 
 
-    -drop_feats: Deletes variables that we don't want to include as predicitve feature
+    -drop_feats: Deletes variables that we don't want to include as predictive feature
     -split: Splits data into train and test sections.
     - knn_f: Fits model and applies to testing data according to the specificities provided for the adjustment of the model.
     - test_evals: Returns an evaluation measure according to the test
     predictions and true values, according to a given threshold
     and according to the specified measure of evaluation.
-    -  test_models:   Tests all possible specifications for a knn model given a set of parameters specified. 
+    -  test_models:   Tests all possible specifications for a knn model given a set of parameters specified.
+
+
+The second part of the notebook excecutes the functions that were created on the firs part. I start by creating the pandas frame that is going to be used for the subsequent analysis, as well as by defining lists of variables that are used in the functions. The approach is the followin:
+
+a. For all variables, we get the descriptive statistics, and meassures of missing values (by percentages). I also carry out scatter plots and pearson coefficient to meassure how variables relate to each other and how they relate to the dependent variable. I also run the same statistical analysis for some of these variables grouped at the zip code level. We see, for example, that in ZC 60644 there are little probabilities of experienced 90 days past due delinquency. It also happens to be an area with a slighter older population, and higher monthly income.
+Scatter plots are not very intuitive for this case since we have a discrete outcome variable, but we can see a different distribution in the opposite sides of the outcome variable for some features such as number of dependents, monthly income, and debt ratio. The plots also help us identify outliers.
+
+Finally, we run a nested loop in order to adjust in many different ways the KNN model, and to find the one that gives a best accuracy score according to the test section of the data.
