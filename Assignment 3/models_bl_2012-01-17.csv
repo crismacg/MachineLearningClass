@@ -1,0 +1,3 @@
+,,precision at 0.99,recall at 1.0000000000000009%,f1 at 1.0000000000000009%,precision at 0.95,recall at 5.000000000000004%,f1 at 5.000000000000004%,precision at 0.9,recall at 9.999999999999998%,f1 at 9.999999999999998%,precision at 0.8,recall at 19.999999999999996%,f1 at 19.999999999999996%,precision at 0.5,recall at 50.0%,f1 at 50.0%,auc
+BL,"['strategy', 'random_state'] = ('most_frequent', 0)",0,0.0,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0.0,0,0.0
+BL,"['strategy', 'random_state'] = ('prior', 0)",0,0.0,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0.0,0,0.0
